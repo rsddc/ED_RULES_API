@@ -1,0 +1,39 @@
+2021-02-01 16:00:55.862  INFO 12952 --- [main] com.rs.ed.api.EdRulesApplication         : Starting EdRulesApplication using Java 1.8.0_231 on LAPTOP-NIAIGC1U with PID 12952 (D:\ED-Rules-API\ed-rules\target\classes started by Asus in D:\ED-Rules-API\ed-rules)
+2021-02-01 16:00:55.864 DEBUG 12952 --- [main] com.rs.ed.api.EdRulesApplication         : Running with Spring Boot v2.4.1, Spring v5.3.2
+2021-02-01 16:00:55.864  INFO 12952 --- [main] com.rs.ed.api.EdRulesApplication         : No active profile set, falling back to default profiles: default
+2021-02-01 16:00:56.581  INFO 12952 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-02-01 16:00:56.597  INFO 12952 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 0 JPA repository interfaces.
+2021-02-01 16:00:56.980  INFO 12952 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-02-01 16:00:56.982  INFO 12952 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-02-01 16:00:56.988  INFO 12952 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-02-01 16:00:57.076  INFO 12952 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-02-01 16:00:57.076  INFO 12952 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1160 ms
+2021-02-01 16:00:57.202  INFO 12952 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-02-01 16:00:57.289  INFO 12952 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-02-01 16:00:57.327  INFO 12952 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-02-01 16:00:57.378  INFO 12952 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.25.Final
+2021-02-01 16:00:57.510  INFO 12952 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-02-01 16:00:57.711  INFO 12952 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-02-01 16:00:57.895  INFO 12952 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-02-01 16:00:57.899  INFO 12952 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-02-01 16:00:58.083  WARN 12952 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-02-01 16:00:58.209  INFO 12952 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-02-01 16:00:58.288  INFO 12952 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-02-01 16:00:58.438  INFO 12952 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-02-01 16:00:58.439  INFO 12952 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-02-01 16:00:58.444  INFO 12952 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-02-01 16:00:58.477  INFO 12952 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-02-01 16:00:58.625  INFO 12952 --- [main] com.rs.ed.api.EdRulesApplication         : Started EdRulesApplication in 3.063 seconds (JVM running for 3.738)
+2021-02-01 16:01:06.023  INFO 12952 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-02-01 16:01:06.027  INFO 12952 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-02-01 16:01:06.028  INFO 12952 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-02-01 16:01:06.163  INFO 12952 --- [http-nio-8080-exec-1] c.r.ed.api.controller.EdRulesController  : citizen eligiblity determination request received by EdRulesController
+2021-02-01 16:01:06.165 DEBUG 12952 --- [http-nio-8080-exec-1] c.rs.ed.api.service.EdRulesServiceImpl   : Plan file selected by citizen is /com/ed/rule/engine/CCAP.drl
+2021-02-01 16:01:06.755 DEBUG 12952 --- [http-nio-8080-exec-1] c.rs.ed.api.service.EdRulesServiceImpl   : Received benifits PlanInfo(caseNo=0, planName=CCAP, planStatus=DN, planStartDate=null, planEndDate=null, denialRsn=Not eligible due to not having kids, benifitAmt=null)
+2021-02-01 16:01:06.755  INFO 12952 --- [http-nio-8080-exec-1] c.r.ed.api.controller.EdRulesController  : citizen eligiblity determination request completed by EdRulesController
+2021-02-01 16:02:19.538  INFO 12952 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-02-01 16:02:19.713  INFO 12952 --- [RMI TCP Connection(2)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-02-01 16:02:19.716  INFO 12952 --- [RMI TCP Connection(2)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-02-01 16:02:19.716  INFO 12952 --- [RMI TCP Connection(2)-127.0.0.1] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2021-02-01 16:02:19.718  INFO 12952 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-02-01 16:02:19.719  INFO 12952 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

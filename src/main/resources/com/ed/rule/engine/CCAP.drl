@@ -1,0 +1,32 @@
+package com.ed.rule.engine;
+
+import com.rs.ed.api.model.ApplicantInfo;
+import com.rs.ed.api.model.PlanInfo;
+
+rule "CCAP for kids with lower income"
+	when 
+		(applicantInfo:ApplicantInfo(kids>0 && income<=50.00)) && (edResponse:PlanInfo())
+	then
+		edResponse.setPlanStartDate("2021-01-01");
+		edResponse.setPlanEndDate("2031-12-01");
+		edResponse.setPlanStatus("AP");
+		edResponse.setBenifitAmt(200.50);
+	end;
+
+rule "CCAP for kids with average income"	
+	when 
+		(applicantInfo:ApplicantInfo(kids>0 && income > 50.00 && income < 100.00)) && (edResponse:PlanInfo())
+	then
+		edResponse.setPlanStartDate("2021-01-01");
+		edResponse.setPlanEndDate("2025-12-01");
+		edResponse.setPlanStatus("AP");
+		edResponse.setBenifitAmt(150.99);
+	end;
+	
+rule "CCAP for no kids"	
+	when 
+		(applicantInfo:ApplicantInfo(kids<=0)) && (edResponse:PlanInfo())
+	then
+		edResponse.setPlanStatus("DN");
+		edResponse.setDenialRsn("Not eligible due to not having kids");
+	end;

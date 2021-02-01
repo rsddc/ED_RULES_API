@@ -1,0 +1,22 @@
+package com.ed.rule.engine;
+
+import com.rs.ed.api.model.ApplicantInfo;
+import com.rs.ed.api.model.PlanInfo;
+
+rule "SNAP for Unemployed"
+	when 
+		(applicantInfoObject:ApplicantInfo(isEmployeed==false)) && (edResponse:PlanInfo())
+	then
+		edResponse.setPlanStartDate("2021-01-01");
+		edResponse.setPlanEndDate("2031-12-01");
+		edResponse.setPlanStatus("AP");
+		edResponse.setBenifitAmt(400.00);
+	end;
+
+rule "SNAP for employed"	
+	when 
+		(applicantInfo:ApplicantInfo(isEmployeed==true)) && (edResponse:PlanInfo()) 
+	then
+		edResponse.setPlanStatus("DN");
+		edResponse.setDenialRsn("Salaried Employee");
+	end;

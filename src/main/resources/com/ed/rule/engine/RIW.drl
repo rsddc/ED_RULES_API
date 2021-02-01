@@ -1,0 +1,22 @@
+package com.ed.rule.engine;
+
+import com.rs.ed.api.model.ApplicantInfo;
+import com.rs.ed.api.model.PlanInfo;
+
+rule "RIW for Graduate"
+	when
+		(applicantInfoObject:ApplicantInfo(isGraduate==true)) && (plan:PlanInfo())
+	then
+		plan.setPlanStatus("AP");
+		plan.setBenifitAmt(300.50);
+		plan.setPlanStartDate("1999-09-09");
+		plan.setPlanEndDate("1999-09-09");
+	end
+
+rule "RIW for UnderGraduate"	
+	when 
+		(applicantInfoObject:ApplicantInfo(isGraduate==false)) && (plan:PlanInfo())
+	then
+		plan.setPlanStatus("DN");
+		plan.setDenialRsn("Minimum Graduate is required to avail this plan");
+	end
